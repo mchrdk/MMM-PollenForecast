@@ -68,7 +68,6 @@ getDom: function() {
 
 var levelCell = document.createElement("td");
 levelCell.innerHTML = allergen.level.toFixed(2);
-console.log(allergen);
 row.appendChild(levelCell);
 
         });

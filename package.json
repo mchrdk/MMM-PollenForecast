@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/MMM-PollenForecast.git"
+    "url": "git+https://github.com/mchrdk/MMM-PollenForecast.git"
   },
-  "author": "Your Name",
+  "author": "Michael Amadeus Christiansen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/MMM-PollenForecast/issues"
+    "url": "https://github.com/mchrdk/MMM-PollenForecast/issues"
   },
-  "homepage": "https://github.com/yourusername/MMM-PollenForecast#readme",
+  "homepage": "https://github.com/mchrdk/MMM-PollenForecast#readme",
   "dependencies": {
     "xmlhttprequest": "^1.8.0"
   }
