@@ -7,7 +7,9 @@ Module.register("MMM-PollenForecast", {
         location: "48", // Default location key (e.g., 48 = Copenhagen)
         pollenTypeWhitelist: [], // If empty, show all
         displayedAllergens: [],
-        animationSpeed: 1000
+        animationSpeed: 1000,
+        showHeader: true,
+        headerText: "Pollenprognose"
     },
 
     start: function () {
@@ -95,17 +97,26 @@ Module.register("MMM-PollenForecast", {
         return { text: `${name}(${allergen.level}) ${label}`, className: levelClass, iconUrl };
     },
 
+    getHeader: function() {
+        return this.config.headerText || "Pollenprognose";
+    },
+
     getDom: function () {
         const wrapper = document.createElement("div");
+        wrapper.className = "light bright";
 
         if (!this.loaded) {
-            wrapper.innerHTML = "Loading...";
-            wrapper.className = "dimmed light small";
+            const loading = document.createElement("div");
+            loading.innerHTML = "Loading...";
+            loading.className = "dimmed light small";
+            wrapper.appendChild(loading);
             return wrapper;
         }
 
         if (!this.forecast.length) {
-            wrapper.innerHTML = "No pollen data available.";
+            const noData = document.createElement("div");
+            noData.innerHTML = "No pollen data available.";
+            wrapper.appendChild(noData);
             return wrapper;
         }
 
@@ -144,6 +155,7 @@ Module.register("MMM-PollenForecast", {
         }
         setTimeout(() => {
             this.getData();
+            this.scheduleUpdate();
         }, nextLoad);
     },
 
