@@ -1,0 +1,10 @@
+{
+    "7": { "name": "Birk", "intervals": [0, 30, 100, 550] },
+    "1": { "name": "El", "intervals": [0, 10, 50, 200] },
+    "2": { "name": "Hassel", "intervals": [0, 5, 15, 40] },
+    "4": { "name": "Elm", "intervals": [0, 10, 50, 80] },
+    "28": { "name": "Græs", "intervals": [0, 10, 50, 150] },
+    "31": { "name": "Bynke", "intervals": [0, 10, 50, 60] },
+    "44": { "name": "Alternaria", "intervals": [0, 20, 100, 500] },
+    "45": { "name": "Cladosporium", "intervals": [0, 2000, 6000, 7000] }
+}

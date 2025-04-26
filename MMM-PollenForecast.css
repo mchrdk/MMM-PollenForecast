@@ -1,19 +1,20 @@
-.no-data {
-    /* Styles for 'no-data' */
+/* Only keep color classes used by MMM-PollenForecast, now with unique pollen- prefix to avoid conflicts and slightly darker pastel colors */
+.pollen-no-data {
+    color: #888888;
 }
 
-.very-low {
-    /* Styles for 'very-low' */
+.pollen-very-low {
+    color: #6fc1a7; /* darker pastel green */
 }
 
-.low {
-    /* Styles for 'low' */
+.pollen-low {
+    color: #e6d267; /* darker pastel yellow */
 }
 
-.medium {
-    /* Styles for 'medium' */
+.pollen-medium {
+    color: #ffb07c; /* darker pastel orange */
 }
 
-.high {
-    /* Styles for 'high' */
+.pollen-high {
+    color: #ff6f69; /* darker pastel red */
 }

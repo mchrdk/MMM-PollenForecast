@@ -1,0 +1,50 @@
+{
+  "name": "projects/pollen-1bb54/databases/(default)/documents/allergensDailyFeed/feed",
+  "fields": {
+    "48": {
+      "mapValue": {
+        "fields": {
+          "date": { "stringValue": "26-04-2025" },
+          "data": {
+            "mapValue": {
+              "fields": {
+                "7": {
+                  "mapValue": {
+                    "fields": {
+                      "level": { "integerValue": "0" },
+                      "inSeason": { "booleanValue": true }
+                    }
+                  }
+                },
+                "28": {
+                  "mapValue": {
+                    "fields": {
+                      "level": { "integerValue": "15" },
+                      "inSeason": { "booleanValue": true }
+                    }
+                  }
+                },
+                "31": {
+                  "mapValue": {
+                    "fields": {
+                      "level": { "integerValue": "55" },
+                      "inSeason": { "booleanValue": true }
+                    }
+                  }
+                },
+                "2": {
+                  "mapValue": {
+                    "fields": {
+                      "level": { "integerValue": "45" },
+                      "inSeason": { "booleanValue": true }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # MMM-PollenForecast
 
-This is a MagicMirror² module that displays pollen forecast information on your smart mirror. It retrieves data from the Pollentjek API (https://pollentjek.dk/api/middleware/pollen) and provides a visual representation of pollen levels for various allergens.
+This is a MagicMirror² module that displays pollen forecast information on your smart mirror. It retrieves data from the Astma-Allergi pollen API and provides a visual representation of pollen levels for various allergens.
 
 ## Installation
 
@@ -33,14 +33,12 @@ To use this module, add it to the modules array in the `config/config.js` file o
 
 The following configuration options are available for MMM-PollenForecast:
 
-| Option              | Description                                                                     |
-| ------------------- | ------------------------------------------------------------------------------- |
-| `updateInterval`    | Update interval for fetching new data, specified in milliseconds.               |
-| `retryDelay`        | Delay before retrying a failed API request, specified in milliseconds.           |
-| `station`           | The default station to retrieve pollen forecast data for.                       |
-| `displayedAllergens`| An array of allergens to be displayed. If empty, all allergens will be displayed.|
-| `stationIds`        | An object that maps station names to their respective station IDs.               |
-| `apiBase`           | The base URL of the Pollentjek API.                                             |
+| Option                 | Description                                                                                 |
+|------------------------|---------------------------------------------------------------------------------------------|
+| `updateInterval`       | Update interval for fetching new data, specified in milliseconds.                           |
+| `retryDelay`           | Delay before retrying a failed API request, specified in milliseconds.                      |
+| `location`             | The location key to retrieve pollen forecast data for (see `locations.json` for options).   |
+| `pollenTypeWhitelist`  | An array of allergen IDs or names to be displayed. If empty, all allergens will be shown.   |
 
 ### Default Configuration
 
@@ -50,29 +48,25 @@ The following is the default configuration for MMM-PollenForecast:
 defaults: {
     updateInterval: 60 * 60 * 1000, // Update every 1 hour
     retryDelay: 5000,
-    station: 'vest', // Default station
-    displayedAllergens: [], // Allergens to be displayed. If empty, all are displayed
-    stationIds: {
-        'vest': 'ffc9a45f-9736-4df0-9036-1cf8a4bb855d',
-        'øst': 'c1787861-e2b3-4167-a150-3bca8afc11b4'
-    },
-    apiBase: 'https://pollentjek.dk/api/middleware/pollen',
+    location: "48", // Default location key (e.g., 48 = Copenhagen)
+    pollenTypeWhitelist: [], // Allergens to be displayed. If empty, all are displayed
+    displayedAllergens: [],
+    animationSpeed: 1000
 }
 ```
 
-## Dependencies
+## Data Source
 
-This module requires the following dependencies:
+This module fetches pollen data from the Astma-Allergi pollen API (https://www.astma-allergi.dk/umbraco/api/pollenapi/getpollenfeed). The data is processed and filtered based on your configuration.
 
-- [xmlhttprequest](https://www.npmjs.com/package/xmlhttprequest)
+## Code Structure
 
-These dependencies will be automatically installed when running the `npm install` command in the module's directory.
+- The code for requesting and parsing pollen data is separated into `pollenApi.js` for maintainability.
+- The main module logic is in `MMM-PollenForecast.js` and `node_helper.js`.
 
 ## Usage
 
-Once installed and configured, the MMM-PollenForecast module will display the pollen forecast information on your MagicMirror².
-
-The module will automatically fetch the forecast data at the specified `updateInterval` and display the allergens according to their respective pollen levels.
+Once installed and configured, the MMM-PollenForecast module will display the pollen forecast information on your MagicMirror². The module will automatically fetch the forecast data at the specified `updateInterval` and display the allergens according to their respective pollen levels.
 
 ## License
 
@@ -84,4 +78,4 @@ This module is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-- This module uses data from the Pollentjek API (https://pollentjek.dk/api/middleware/pollen).
+- This module uses data from the Astma-Allergi pollen API (https://www.astma-allergi.dk/umbraco/api/pollenapi/getpollenfeed).
